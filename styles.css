@@ -1,0 +1,615 @@
+body {
+    font-family: 'PT Serif', serif;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: calc(2rem + 2vw);
+    text-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
+                 #FFD700 3px 3px 0, #FFD700 4px 4px 0;
+}
+
+h2 {
+    margin: 100px auto 50px auto;
+    font-size: calc(1.5rem + 1vw);
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
+                 #FFD700 3px 3px 0, #FFD700 4px 4px 0;
+    background-color: #000000;
+}
+
+h3 {
+    font-size: calc(0.4rem + 1vw);
+    text-transform: uppercase;  
+    text-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0;
+}
+
+h4 {
+    font-size: calc(0.4rem + 1vw);
+    text-transform: uppercase;  
+    text-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0;
+    color: #FFFFFF;
+}
+
+h5 {
+    font-size: calc(3rem + 2vw);
+    text-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0,
+                #FFD700 3px 3px 0, #FFD700 4px 4px 0;
+    color: #FFFFFF;
+    margin-top: -10px;
+    padding-top: 0px;
+}
+
+h6 {
+    font-size: calc(0.4rem + 1vw);
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-bottom: 3px solid #FFFFFF;
+    display: inline;
+}
+
+section, .servicesPages {
+    min-width: 1000px;
+}
+
+/*Навигационное меню*/
+#menu {
+    background-color: #000000;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    transition: top 0.3s;
+    top: 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 999;
+}
+
+    /*Стиль ссылок в навигационном меню*/
+        .menu_section {     
+            display: inline-block;
+            margin: 20px 15px 0px 15px;
+            color: #FFFFFF;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.2s linear;
+        }
+        
+        /*Подчеркивание ссылок меню желтым цветом*/
+        .menu_section:after {
+            content:"";
+            
+            display: block;
+            display: none;
+            width: 100%;
+            height: 3px;
+            background-color: #FFD700;
+            top: 100%;
+            z-index: 1;
+       
+        }
+        
+        /*Изменение цвета навигационного меню при наведение курсором*/
+        .menu_section:hover {
+           color: #FFD700;
+        }
+            /*Подчеркивание ссылки при наведении курсором мышки*/
+            .menu_section:hover:after {
+                display: block;
+                color: #FFD700;
+            }
+
+/*Секция с главным заголовком*/
+.header{
+    margin: 0px;
+}
+
+    .header_first {
+        width: auto;
+        margin: 0px;     
+    }
+
+        /*Главная картинка*/
+        .mainImage {
+            width: 100%;
+        }
+
+
+        /*Главный заголовок и текст*/
+        .header_1{
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            text-align: left;
+
+        }
+            
+            /*Текст под главным заголовком*/
+            .header_1 p {
+                position: absolute;
+                font-size: calc(1px + 0.9vw);
+                text-indent: 25px;
+                text-shadow: #FFFFFF 1px 1px 0, #FFFFFF 2px 2px 0, 
+                             #FFFFFF 3px 3px 0, #FFFFFF 4px 4px 0;
+            }
+
+/*Заголовки Услуги */
+.servicesHeaders h1 {
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* Секция Услуги арбитражного юриста */
+    /* Контейнеры услуг */
+    .box_services {
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-wrap: wrap;
+        align-content: space-between;
+        align-items: stretch;  
+        margin: 0px 5%;
+        position: relative;
+    }
+
+        .box_services_conteiner {
+            /* Размер контейнеров */
+            -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1; /* OLD - Firefox 19- */
+            width: 20%; /* For old syntax, otherwise collapses. */
+            -webkit-flex: 1 1 20%; /* Chrome */
+            -ms-flex: 1 1 20%; /* IE 10 */
+            flex: 1 1 20%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            height: auto;
+            box-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
+                        #FFD700 3px 3px 0, #FFD700 4px 4px 0;          
+            padding: 5px;
+            margin: 10px;
+            border: 5px solid black; 
+            width: 300px;
+            height: 300px;     
+        }
+
+            .card {
+                position: relative;
+                width: 100%;
+                height: 100%;         
+            }
+
+            .front, .back {
+                position: absolute;
+                width: 100%;
+                height: 100%;      
+                backface-visibility: hidden;
+                transition: 2s; 
+                text-align: center;
+            }
+
+            .back {
+                transform: rotateY(180deg);
+                background: #FFD700; 
+            }
+          
+            .card:hover .front {
+                transform: rotateY(180deg);
+            }
+            .card:hover .back {
+                transform: rotateY(360deg);
+            }    
+
+            /* Иконки услуг*/
+            .icon_services {
+               width: 40%;
+               height: 50%;
+               padding-bottom: 20px;
+            }
+
+            /* Текст в контейнерах */
+            .box_services_conteiner p {
+             font-size: calc(0.1rem + 1vw);
+             padding: 5px;
+             text-align: center;
+            }
+
+/* Кнопки в секции Услуги */
+.buttonServiсes, .buttonServiсes:before {
+display: inline-block;
+font-size: 20px;
+color: #fff;
+text-decoration: none;
+margin-top: 30%;
+padding: 8px 15px;
+border-radius: 100px;
+border: solid rgb(4,88,192);
+border-width: 3px 10px;
+outline: none;
+opacity: 1;
+transition: .6s, opacity 0s 9999999s, visibility 0s 9999999s;
+} 
+
+.buttonServiсes {
+position: relative;
+padding: calc(8px + 3px - 1px) calc(15px + 10px - 1px);
+border: 1px solid rgba(62,153,239,.5);
+background: linear-gradient(to left, rgb(62,153,239) 1%, #fff 3%, rgb(44,135,232) 8%, rgba(255,255,255,.3) 50%, rgb(44,135,232) 92%, #fff 97%, rgb(62,153,239) 99%) no-repeat;
+}
+
+.buttonServiсes:before {
+content:  "ПОДРОБНЕЕ";
+position: absolute; 
+bottom: -7px;
+left: -1px;
+width: 100%;
+background: #fff linear-gradient(rgb(58,160,253), rgb(4,88,192) 60%, rgb(49,112,201));
+box-shadow: 0 10px 18px rgba(0,0,0,.5);
+}
+
+.buttonServiсes:hover {
+-webkit-transform: scale(1.1, 1.1);
+transform: scale(1.1, 1.1);
+}
+
+.buttonServiсes:hover:before {
+border-color: #0766d8;
+background: #fff linear-gradient(#3fadff, #0766d8 60%, #3279dd);
+}
+
+.buttonServiсes:focus,.buttonServiсes:active {
+-webkit-transform: scale(2, 2);
+transform: scale(2, 2);
+opacity: 0;
+visibility: hidden;
+transition: .4s;
+}
+
+/* Секция Этапы */
+#stages { 
+    margin-top: 150px;
+}
+    .stagesMain {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .vidStages { 
+        width: 100%;
+        z-index: -10;
+    }
+
+        .stagesBoxOne, .stagesBoxTwo, .stagesBoxThree, 
+        .stagesBoxFour, .stagesBoxFive, .stagesBoxSix {   
+            width: 20%;
+            height: 25%;
+            border: 5px solid #FFFFFF; 
+            box-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
+                        #FFD700 3px 3px 0, #FFD700 4px 4px 0;   
+            text-align: center;
+            position: absolute;
+            padding: 5px;
+            z-index: 5;
+        }
+
+        .stagesBoxOne {
+            margin-top: 3%;
+            left: 3%;
+        }
+
+        .stagesBoxTwo {
+            margin-top: 20%;
+            left: 3%;
+        }
+
+        .stagesBoxThree {
+            margin-top: 37%;
+            left: 3%;
+        }
+
+        .stagesBoxFour {
+            margin-top: 3%;
+            right: 3%;
+        }
+
+        .stagesBoxFive {
+            margin-top: 20%;
+            right: 3%;
+        }
+
+        .stagesBoxSix {
+            margin-top: 37%;
+            right: 3%;
+        }
+
+    .stagesBoxTextOne, .stagesBoxTextTwo, .stagesBoxTextThree, 
+    .stagesBoxTextFour, .stagesBoxTextFive, .stagesBoxTextSix {
+        position: absolute;
+        width: 45%;
+        height: auto;
+        left: 27%; 
+        text-align: justify; 
+        padding: 5px;
+        background: #FFFFFF;
+        opacity: 0.8;
+        text-indent: 25px;
+    }
+
+        .stagesBoxTextOne {
+            z-index: -100;
+            top: 3%;
+        }
+
+        .stagesBoxTextTwo {
+            z-index: -99;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .stagesBoxTextThree {
+            z-index: -98;
+            bottom: 3%;
+        }
+
+        .stagesBoxTextFour {
+            z-index: -97;
+            top: 3%;
+        }
+
+        .stagesBoxTextFive {
+            z-index: -96;
+            top: 50%;
+            transform: translateY(-50%); 
+        }
+
+        .stagesBoxTextSix {
+            z-index: -95;
+            bottom: 3%;
+        }
+
+    .stagesBoxTextOne p, .stagesBoxTextTwo p, .stagesBoxTextThree p, 
+    .stagesBoxTextFour p, .stagesBoxTextFive p, .stagesBoxTextSix p {
+        font-size: calc(1px + 1vw);
+        color: #000000;
+        text-shadow: #FFD700 1px 1px 0; 
+        font-weight: bold; 
+    }  
+
+/* Section - Advantages */
+#advantages {
+    margin-top: 150px;
+}
+
+    .advantagesMain {
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-wrap: wrap;
+        position: relative;
+        align-content: center;
+    }
+
+        .advantagesBox{
+            -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1; /* OLD - Firefox 19- */
+            width: 25%; /* For old syntax, otherwise collapses. */
+            -webkit-flex: 1 1 25%; /* Chrome */
+            -ms-flex: 1 1 25%; /* IE 10 */
+            flex: 1 1 25%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: center;
+            margin: 2% 2% 2% 2%;
+            padding: 10px;
+        }
+
+        .iconAdvantages{
+            margin: 5%;
+            width: 12%;
+            height: 20%;
+        }
+
+        .vidAdvantages{
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .advantagesBox h3{   
+            border-bottom: 5px solid #000000;
+        }
+
+        .advantagesBox p {
+            font-size: calc(1px + 1vw);
+            color: #000000;
+            text-shadow: #FFD700 1px 1px 0; 
+            font-weight: bold; 
+        }
+
+        .advantagesIndentationBox{
+            margin-top: 2%;
+            width: 100%;
+            height: 5px;
+            background-color: #000000;
+            opacity: 0;
+        }
+
+/*Section - Specializations*/
+#specializations{
+    margin-top: 150px;
+}
+
+    .specializationsMain{
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+        .specializationsBox{
+            -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1; /* OLD - Firefox 19- */
+            width: 25%; /* For old syntax, otherwise collapses. */
+            -webkit-flex: 1 1 25%; /* Chrome */
+            -ms-flex: 1 1 25%; /* IE 10 */
+            flex: 1 1 25%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            text-align: center;
+            margin: 2%;
+        }
+
+        .specializationsIcon{
+            margin: 5%;
+            width: 12%;
+            height: 30%;
+        }
+
+        .specializationsBox h3{
+            border-bottom: 5px solid #000000;
+        }
+
+/*Section - BottomBody*/
+#bottomBody{
+    margin-top: 150px;
+    background-color: #000000;
+}
+
+    .bottomBodyMain{
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        align-content: center;
+    }
+
+    .bottomBodyBox{
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 20%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 1 1 20%; /* Chrome */
+        -ms-flex: 1 1 20%; /* IE 10 */
+        flex: 1 1 20%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        text-align: left;
+        margin: 1%;
+    }
+
+    .bottomBodyBoxHref{
+        font-size: calc(0.4rem + 1vw);
+        color: #FFFFFF;
+        text-transform: uppercase;
+        display: inline;
+        text-decoration: none;
+    }
+    
+        .bottomBodyBoxHref:hover{
+            color: #FFD700;
+            border-bottom: 3px solid #FFD700;
+            display: inline;
+            transition: color 0.2s linear;
+        }
+
+    .bottomBodyBoxHref2{
+        font-size: calc(0.4rem + 1vw);
+        color: #FFFFFF;
+        display: inline;
+        margin: 3px 0px 0px 0px;
+        padding: 0px;
+        text-decoration: none;
+    }
+
+        .bottomBodyBoxHref2:hover{
+            color: #FFD700;
+            border-bottom: 3px solid #FFD700;
+            display: inline;
+            transition: color 0.2s linear;
+        }
+
+    .bottomBodyBox p{
+        font-size: calc(0.2rem + 1vw);
+        color: #FFFFFF;
+        margin: 0; 
+    }
+
+/*Section - ServicesPages*/
+.servicesPages h1{
+    margin: 80px 2%;
+    text-align: center;
+}
+
+.servicesPages h3{
+    margin: 40px 10% 20px 10%;
+    border-bottom: 3px solid #000000;
+}
+
+.servicesPages p{
+    margin: 20px 10% 0 10%;
+    text-align: justify;
+    text-indent: 40px;
+}
+
+/* Section - Table */
+table{
+    width: 100%;
+    border: solid #000000;
+}
+
+.tableBox{
+    padding: 100px 5% 50px 5%;
+}
+
+caption{
+    background: #000000; 
+    padding: 10px;
+}
+
+th, td{
+   padding: 10px;
+   text-align: center;
+}
+
+th{
+    background: #FFD700;
+}
+
+.tableServices{
+    text-align: left;
+}
+
+tr:hover td{
+    background: #f5f0d4;
+}
+
+.afterTheTable{
+    font-weight: bold;
+}
+
+@media (max-width: 980px){
+    p, .servicesPages{
+        font-size: 16px;
+    }
+
+    .afterTheTable p{
+        font-size: 12px;
+    }
+}
+
+    
