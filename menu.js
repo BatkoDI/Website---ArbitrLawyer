@@ -1,62 +1,89 @@
 "use strict"
 
-/* Блок меню */
-  /* Секция - Главная */
-  let mainMenu = document.createElement("a");
-  mainMenu.className = "menu_section";
-  mainMenu.href = "main.html";
-  mainMenu.innerHTML = "Главная";
+  /* Creating section - Main */
+  let mainMenu = createNav("main.html", "Главная");
 
-  /* Секция - Цены*/
-  let costsMenu = document.createElement("a");
-  costsMenu.className = "menu_section";
-  costsMenu.href = "costOfServices.html";
-  costsMenu.innerHTML = "Цены";
+  /* Creating section - Prices */
+  let costsMenu = createNav("costOfServices.html", "Цены");
 
-  /* Секция - Контакты */
-  let contactsMenu = document.createElement("a");
-  contactsMenu.className = "menu_section";
-  contactsMenu.href = "#bottomBody";
-  contactsMenu.innerHTML = "Контакты";
+  /* Creating section - Contacts */
+  let contactsMenu = createNav("#bottomBody", "Контакты");
 
-  /* Секция - Услуги*/
-  let servicesMenu = document.createElement("a");
-  servicesMenu.className = "menu_section";
-  servicesMenu.href = "main.html#services";
-  servicesMenu.innerHTML = "Услуги";
+  /* Creating section - Services */
+  let servicesMenu = createNav("main.html#services", "Услуги");
 
-  /* Секция - Этапы*/
-  let stagesMenu = document.createElement("a");
-  stagesMenu.className = "menu_section";
-  stagesMenu.href = "#stages";
-  stagesMenu.innerHTML = "Этапы";
+  /* Creating section - Stages */
+  let stagesMenu = createNav("#stages", "Этапы");
 
-  /* Секция - Преимущества*/
-  let advantagesMenu = document.createElement("a");
-  advantagesMenu.className = "menu_section";
-  advantagesMenu.href = "#advantages";
-  advantagesMenu.innerHTML = "Преимущества";
+  /* Creating section - Advantages */
+  let advantagesMenu = createNav("#advantages", "Преимущества");
 
-  /* Секция - Специализация*/
-  let specializationsMenu = document.createElement("a");
-  specializationsMenu.className = "menu_section";
-  specializationsMenu.href = "#specializations";
-  specializationsMenu.innerHTML = "Специализация";
+  /* Creating section - Specializations */
+  let specializationsMenu = createNav("#specializations","Специализация");
 
-  /* Вставка блока Меню в DOM */
-  let posMenu = document.getElementById("menu")
 
-  posMenu.append(mainMenu);
-  posMenu.append(costsMenu);
-  posMenu.append(contactsMenu);
-  posMenu.append(servicesMenu);
-  posMenu.append(stagesMenu);
-  posMenu.append(advantagesMenu);
-  posMenu.append(specializationsMenu);
+  let posMenu = document.getElementById("menu");
+
+  /* Creating location menu for devices with screen size of more then 500px. */
+  function createLocationNavComp () {
+  /* If the change is made from a screen with a size less then 500px? then 
+  unecessery elements that were created for mobile devices are removed. */  
+    if(createNavDiv && createNavUl && createNavLi){
+      createNavDiv.remove();
+      createNavUl.remove();
+      createNavLi.remove();
+    }
+      posMenu.append(mainMenu);
+      posMenu.append(costsMenu);
+      posMenu.append(contactsMenu);
+      posMenu.append(servicesMenu);
+      posMenu.append(stagesMenu);
+      posMenu.append(advantagesMenu);
+      posMenu.append(specializationsMenu);
+    } 
+
+  /* Creating elements for mobile devices. */
+  let createNavDiv = createElementAny("div", "menuButton", "Меню");
+  let createNavUl = createElementAny("ul", "menuUl");
+  let createNavLi = createElementAny("li", "menuLi"); 
+  /* Creating location menu for devaices with screen size of less then 500px. */
+  function createLocationNavMobile() { 
+    posMenu.append(createNavDiv);
+        createNavDiv.append(createNavUl);
+          createNavUl.append(createNavLi);
+            createNavLi.append(mainMenu);
+            createNavLi.append(costsMenu);
+            createNavLi.append(contactsMenu);
+            createNavLi.append(servicesMenu);
+            createNavLi.append(stagesMenu);
+            createNavLi.append(advantagesMenu);
+            createNavLi.append(specializationsMenu);
+  }
+
+ /* Creating a function to track thescreen size. If the screen is large then 500px, 
+ then a menu is created for large screen. If the screen becomes less then 500px, 
+ then a menu for mobile devices with one button is created */
+  let mediaQuery = window.matchMedia("(min-width: 501px)");
+
+  function menuChange(media) {
+    if(media) {
+      createLocationNavComp();
+    } else {
+      createLocationNavMobile();
+    }
+  };
+
+  mediaQuery.addEventListener("change", function(event) {
+    menuChange(event.matches);
+  })
+  
+   menuChange(mediaQuery.matches); 
   
 
-/* Когда пользователь прокручивает страницу вниз, скрываем меню.
-  Когда пользователь прокручивает страницу вверх, показываем меню. */
+
+
+/* When the user scrolls down the page, we hide the menu.
+When the user scrolls the page up, we show the menu. */
   let prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;

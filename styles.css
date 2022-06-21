@@ -1,5 +1,7 @@
+@import url("./normalize.css");
+
 body {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Serif', 'Times New Roman', Georgia, Times, serif;
     font-size: 16px;
     color: #000000;
     line-height: 1.6;
@@ -62,10 +64,6 @@ h6 {
     display: inline;
 }
 
-section, .servicesPages {
-    min-width: 1000px;
-}
-
 /*Навигационное меню*/
 #menu {
     background-color: #000000;
@@ -93,9 +91,7 @@ section, .servicesPages {
         
         /*Подчеркивание ссылок меню желтым цветом*/
         .menu_section:after {
-            content:"";
-            
-            display: block;
+            content:""; 
             display: none;
             width: 100%;
             height: 3px;
@@ -116,18 +112,33 @@ section, .servicesPages {
             }
 
 /*Секция с главным заголовком*/
-.header{
-    margin: 0px;
+#header{
+    width: 100%;
+    height: auto; 
 }
 
-    .header_first {
-        width: auto;
-        margin: 0px;     
+    #mouseParallax {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        background-color: rgb(206, 206, 206);
+        overflow: hidden;
     }
 
         /*Главная картинка*/
-        .mainImage {
-            width: 100%;
+        #mainImage{
+            position: absolute;
+            width: 90%;
+            height: auto;
+            z-index: 5;
+            transition: all 0.1s ease;
+        }
+
+        #backgroundImage{
+            width: 110%;
+            height: auto; 
+            transition: all 0.1s ease;
+            filter: blur(0.8px); 
         }
 
 
@@ -137,7 +148,7 @@ section, .servicesPages {
             right: 20px;
             top: 60px;
             text-align: left;
-
+            z-index: 10;
         }
             
             /*Текст под главным заголовком*/
@@ -145,6 +156,7 @@ section, .servicesPages {
                 position: absolute;
                 font-size: calc(1px + 0.9vw);
                 text-indent: 25px;
+                text-align: justify;
                 text-shadow: #FFFFFF 1px 1px 0, #FFFFFF 2px 2px 0, 
                              #FFFFFF 3px 3px 0, #FFFFFF 4px 4px 0;
             }
@@ -184,7 +196,6 @@ section, .servicesPages {
             padding: 5px;
             margin: 10px;
             border: 5px solid black; 
-            width: 300px;
             height: 300px;     
         }
 
@@ -206,8 +217,13 @@ section, .servicesPages {
             .back {
                 transform: rotateY(180deg);
                 background: #FFD700; 
+                background-image: linear-gradient(135deg, #FFD700, #f0e8b9 );
             }
-          
+
+            .card:hover {
+                outline: #FFD700 solid 20px;
+            }
+
             .card:hover .front {
                 transform: rotateY(180deg);
             }
@@ -219,7 +235,7 @@ section, .servicesPages {
             .icon_services {
                width: 40%;
                height: 50%;
-               padding-bottom: 20px;
+               margin: 30px;
             }
 
             /* Текст в контейнерах */
@@ -287,18 +303,18 @@ transition: .4s;
     .stagesMain {
         position: relative;
         width: 100%;
-        height: 100%;
     }
 
     .vidStages { 
         width: 100%;
+        height: 100%;
         z-index: -10;
     }
 
         .stagesBoxOne, .stagesBoxTwo, .stagesBoxThree, 
         .stagesBoxFour, .stagesBoxFive, .stagesBoxSix {   
-            width: 20%;
-            height: 25%;
+            width: 22%;
+            height: 27%;
             border: 5px solid #FFFFFF; 
             box-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
                         #FFD700 3px 3px 0, #FFD700 4px 4px 0;   
@@ -347,7 +363,7 @@ transition: .4s;
         text-align: justify; 
         padding: 5px;
         background: #FFFFFF;
-        opacity: 0.8;
+        opacity: 0;
         text-indent: 25px;
     }
 
@@ -386,6 +402,7 @@ transition: .4s;
     .stagesBoxTextOne p, .stagesBoxTextTwo p, .stagesBoxTextThree p, 
     .stagesBoxTextFour p, .stagesBoxTextFive p, .stagesBoxTextSix p {
         font-size: calc(1px + 1vw);
+        margin: 5px;
         color: #000000;
         text-shadow: #FFD700 1px 1px 0; 
         font-weight: bold; 
@@ -502,14 +519,26 @@ transition: .4s;
     }
 
     .bottomBodyBox{
-        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
-        -moz-box-flex: 1; /* OLD - Firefox 19- */
-        width: 20%; /* For old syntax, otherwise collapses. */
-        -webkit-flex: 1 1 20%; /* Chrome */
-        -ms-flex: 1 1 20%; /* IE 10 */
-        flex: 1 1 20%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
         text-align: left;
         margin: 1%;
+    }
+
+    .bottomBodyBox:nth-of-type(1), .bottomBodyBox:nth-of-type(4){
+        -webkit-box-flex: 3; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 3; /* OLD - Firefox 19- */
+        width: 17%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 3 1 17%; /* Chrome */
+        -ms-flex: 3 1 17%; /* IE 10 */
+        flex: 3 1 17%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+    .bottomBodyBox:nth-of-type(2), .bottomBodyBox:nth-of-type(3){
+        -webkit-box-flex: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 2; /* OLD - Firefox 19- */
+        width: 27%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 2 1 27%; /* Chrome */
+        -ms-flex: 2 1 27%; /* IE 10 */
+        flex: 2 1 27%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
     }
 
     .bottomBodyBoxHref{
@@ -566,6 +595,12 @@ transition: .4s;
     text-indent: 40px;
 }
 
+.servicesPages ul{
+    margin: 20px 10% 0 10%;
+    text-align: justify;
+    text-indent: 40px;
+}
+
 /* Section - Table */
 table{
     width: 100%;
@@ -596,20 +631,403 @@ th{
 
 tr:hover td{
     background: #f5f0d4;
+    font-weight: bold;
+    transition: 0.7s;
 }
 
 .afterTheTable{
     font-weight: bold;
 }
 
-@media (max-width: 980px){
+@media (max-width: 1000px){
+/*Section - Menu*/
+    a {
+        font-size: calc(0.3rem + 1vW);
+    }
+
+/*Section - Header*/
+    .header_1 p {
+            font-size: calc(1px + 1vw);
+        }
+
+/*Section - Services*/
+    .box_services {
+        justify-content: center;
+    }
+
+    .box_services_conteiner {
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 29%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 0 1 29%; /* Chrome */
+        -ms-flex: 0 1 29%; /* IE 10 */
+        flex: 0 1 29%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+/*Section - Stages*/
+    .stagesBoxOne, .stagesBoxTwo, .stagesBoxThree, 
+    .stagesBoxFour, .stagesBoxFive, .stagesBoxSix {   
+        width: 22%;
+        height: 27%;
+    }
+
+    h4 {
+        font-size: calc(0.3rem + 1vw);
+    }
+
+    h5 {
+        font-size: calc(2.2rem + 1.5vw);
+    }
+
+    .stagesBoxTextOne p, .stagesBoxTextTwo p, .stagesBoxTextThree p, 
+    .stagesBoxTextFour p, .stagesBoxTextFive p, .stagesBoxTextSix p{
+        font-size: calc(0.1rem + 0.8vw);
+    }
+
+/*Section - Advantages*/
+    .advantagesBox{
+        margin: 0% 2%;   
+    } 
+
+
+/*Section - Footer*/
+    .bottomBodyBoxHref{
+        font-size: calc(0.3rem + 1vw);
+    }
+
+    .bottomBodyBoxHref2{
+        font-size: calc(0.3rem + 1vw);
+    }
+
+    .bottomBodyBox ul{
+        padding-left: 5px;
+    }
+
+    .bottomBodyBox:nth-of-type(1), .bottomBodyBox:nth-of-type(4){
+        -webkit-box-flex: 3; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 3; /* OLD - Firefox 19- */
+        width: 17%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 3 1 17%; /* Chrome */
+        -ms-flex: 3 1 17%; /* IE 10 */
+        flex: 3 1 17%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+    .bottomBodyBox:nth-of-type(2), .bottomBodyBox:nth-of-type(3){
+        -webkit-box-flex: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 2; /* OLD - Firefox 19- */
+        width: 27%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 2 1 27%; /* Chrome */
+        -ms-flex: 2 1 27%; /* IE 10 */
+        flex: 2 1 27%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+/*Section - Table and ServisesPages*/
     p, .servicesPages{
         font-size: 16px;
     }
 
     .afterTheTable p{
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
+@media (max-width: 750px){
+/*Section - Menu*/
+    a {
+        font-size: calc(0.14rem + 1vW);
+    }
+
+/*Section - Header*/
+    .header_1 p {
+        font-size: calc(3px + 1vw);
+    }
     
+/*Section - Services*/
+    .box_services {
+        justify-content: center;
+    }
+
+    .box_services_conteiner {
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 40%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 0 1 40%; /* Chrome */
+        -ms-flex: 0 1 40%; /* IE 10 */
+        flex: 0 1 40%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        height: 200px;
+    }
+
+    .buttonServiсes, .buttonServiсes:before{
+        font-size: calc(0.4rem + 1vw);
+    }
+
+/*Section - Stages*/
+    .stagesMain {
+        margin-top: 80px;
+    }
+
+    h4 {
+        font-size: calc(0.17rem + 1vw);
+    }
+
+    h5 {
+        font-size: calc(1.5rem + 1.5vw);
+    }
+
+    .stagesBoxTextOne p, .stagesBoxTextTwo p, .stagesBoxTextThree p, 
+    .stagesBoxTextFour p, .stagesBoxTextFive p, .stagesBoxTextSix p{
+        font-size: calc(0.1rem + 0.8vw);
+    }
+
+/*Section - Advantages*/
+    
+    .advantagesBox{
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 40%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 1 1 40%; /* Chrome */
+        -ms-flex: 1 1 40%; /* IE 10 */
+        flex: 1 1 40%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        text-align: center;
+        margin: 2% 2% 2% 2%;
+        padding: 10px;
+    }
+
+    .advantagesBox p {
+        font-size: calc(4px + 1vw);
+    }
+
+    .vidAdvantages{
+        visibility: hidden;
+    }
+
+/*Section - Footer*/
+    .bottomBodyBoxHref{
+        font-size: calc(0.6rem + 1vw);
+    }
+
+    .bottomBodyBoxHref2{
+        font-size: calc(0.5rem + 1vw);
+    }
+
+    .bottomBodyMain{
+        flex-wrap: wrap;
+    }
+
+    .bottomBodyBox:nth-of-type(1){
+        order: 1;
+    }
+
+    .bottomBodyBox:nth-of-type(2){
+        order: 3;
+    }
+
+    .bottomBodyBox:nth-of-type(3){
+        order: 4;
+    }
+
+    .bottomBodyBox:nth-of-type(4){
+        order: 2;
+    }
+
+    .bottomBodyBox:nth-of-type(1), .bottomBodyBox:nth-of-type(2), 
+    .bottomBodyBox:nth-of-type(3), .bottomBodyBox:nth-of-type(4){
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 40%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 1 1 40%; /* Chrome */
+        -ms-flex: 1 1 40%; /* IE 10 */
+        flex: 1 1 40%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+    .bottomBodyBox h6, .bottomBodyBox p{
+        font-size: calc(0.8rem + 1vw);
+    }
+
+    .bottomBodyBox adress > a {
+        font-size: calc(0.8rem + 1vw);
+    }
+
+/*Section - Table and ServisesPages*/ 
+    p, .servicesPages{
+        font-size: 14px;
+    }
+
+    .afterTheTable p{
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 500px){
+
+    h2 {
+        margin: 50px auto 30px auto;
+        font-size: calc(1.2rem + 1vw);
+    }
+
+/*Section - Menu*/
+    .menuButton{
+        color: #FFFFFF;
+        text-transform: uppercase;
+        padding-top: 20px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .menuUl{
+        display: none;
+        background-color: #000000;
+        margin-top: 0;
+        padding: 0px;
+        list-style: none;
+    }
+
+    .menu_section { 
+        display: block;
+        margin: 10px;    
+    }
+
+    .menuButton:hover .menuUl{
+        display: block;
+    }
+
+/* Section - Header*/
+    h1 {
+        font-size: calc(1rem + 2vw);
+    }
+        
+    .header_1 p {
+        font-size: calc(0.2rem + 1vw);
+    }
+
+/* Section - Services */
+
+    .box_services_conteiner {
+        height: 150px;
+    }
+
+    .icon_services {
+        width: 40%;
+        height: 50%;
+        margin: 10px;
+     }
+
+/* Section - Stages */
+    #stages { 
+        margin-top: 50px;
+    }
+
+    .stagesMain {
+        margin-top: 50px;
+        position: relative;
+        background-color: #000000; 
+        padding: 5%;
+        
+    }
+
+    .vidStages { 
+        display: none;
+    }
+
+    .stagesBoxOne, .stagesBoxTwo, .stagesBoxThree, 
+    .stagesBoxFour, .stagesBoxFive, .stagesBoxSix {   
+        width: 90%;
+        height: auto;
+        border: 5px solid #FFFFFF; 
+        box-shadow: #FFD700 1px 1px 0, #FFD700 2px 2px 0, 
+                    #FFD700 3px 3px 0, #FFD700 4px 4px 0;   
+        position: static; 
+        margin: 5%;     
+    }
+
+    h4{ 
+        font-size: calc(0.8rem + 1vw);
+    }
+
+    .stagesBoxTextOne, .stagesBoxTextTwo, .stagesBoxTextThree, 
+    .stagesBoxTextFour, .stagesBoxTextFive, .stagesBoxTextSix {
+        width: 90%;
+        height: auto;
+        margin: 5%;; 
+        padding: 5px; 
+        left: 0%; 
+    }
+
+    .stagesBoxTextTwo, .stagesBoxTextFive{
+        transform: translateY(0%); 
+    }
+
+    .stagesBoxTextOne p, .stagesBoxTextTwo p, .stagesBoxTextThree p, 
+    .stagesBoxTextFour p, .stagesBoxTextFive p, .stagesBoxTextSix p{
+        font-size: calc(0.5rem + 0.8vw);
+    }
+
+/* Section - Advantages */
+    #advantages {
+        margin-top: 50px;
+    }
+
+    .advantagesBox{
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 80%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 1 1 80%; /* Chrome */
+        -ms-flex: 1 1 80%; /* IE 10 */
+        flex: 1 1 80%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        text-align: left;
+        margin: 0, 10px, 0, 10px;
+        padding: 0;
+
+    }
+
+    .iconAdvantages{
+        display: none;
+    }
+
+    .advantagesBox h3{
+        font-size: calc(0.6rem + 1vw);
+        margin: 10px;
+    }
+
+    .advantagesBox p {
+        font-size: calc(0.6rem + 1vw);
+        color: #000000;
+        text-shadow: none; 
+    }
+
+    .advantagesBox h3, .advantagesBox p{
+        display: inline;
+    }
+
+/* Section - Specialization */
+    #specializations{
+        margin-top: 50px;
+    }
+
+    .specializationsBox{
+        -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1; /* OLD - Firefox 19- */
+        width: 700%; /* For old syntax, otherwise collapses. */
+        -webkit-flex: 1 1 700%; /* Chrome */
+        -ms-flex: 1 1 70%; /* IE 10 */
+        flex: 1 1 70%; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        text-align: center;
+        margin: 3%, 5%;
+    }
+
+    .specializationsBox h3{
+        font-size: calc(0.8rem + 1vw);
+    }
+
+/*Section - Table and ServisesPages*/ 
+    .servicesPages h1{
+        margin-bottom: 30px;
+    }
+
+    .servicesPages h3{
+        font-size: calc(0.6rem + 1vw);
+        text-align: center;
+    }
+
+}
